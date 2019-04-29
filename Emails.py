@@ -2,7 +2,15 @@ import smtplib, ssl
 import urllib, re
 from googlesearch import search
 from urllib.request import Request, urlopen
-
+################################################################
+#This is my AutoEmailSender project
+#It all fits in to one file
+#Basically it asks the user for a number, n and search terms
+#It searches google with these queries or search terms adn takes n urls,
+#then opens these urls and webscrapes them for email addresses, and then
+#stores those email addresses in a list,
+#and then sends those email addresses with a message, through a SMTP server
+#############################################################################
 def main():
     n=input("Enter a number: ")
     e=emails(int(n))
