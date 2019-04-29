@@ -17,10 +17,12 @@ def main():
     count=0
     print(e) #list of emails 
     for email in e:
-        send("johnhan234@gmail.com","asdfjkl;",email)
+        send("johnhan234@gmail.com","asdfjkl;asdfjkl",email)
+        print("Sent an email")
         count+=1
     print("Just sent {} emails".format(count))
-    
+#Takes in a sender email, password, and a receiver email
+#Sends them a message. 
 def send(sender_email, sender_password, receiver_email): 
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
@@ -37,6 +39,9 @@ def send(sender_email, sender_password, receiver_email):
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, message)
+        print("Sent email!")
+#This takes in a number n and asks the user for queries
+#Then adds them to a list, and search them then gets the emails
 def emails(n):
     terms=list()
     urls=list()
